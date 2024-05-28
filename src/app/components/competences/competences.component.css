@@ -1,0 +1,10 @@
+.img{
+    width: 100px;
+    height: 100px;
+}
+.title{
+    color: black;
+     text-align: center;
+      text-decoration: underline;
+      font-size: large;
+}

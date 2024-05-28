@@ -1,0 +1,124 @@
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="row mt-1">
+
+        <div class="col-lg-4">
+          <div class="info">
+            <div class="address">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Emplacement:</h4>
+              <p>Cite Ennakhil Ezzahra Ben Arous , Tunisie</p>
+            </div>
+
+            <div class="email">
+              <i class="bi bi-envelope"></i>
+              <h4>E-mail:</h4>
+              <p>bilelmekni30@gmail.com</p>
+            </div>
+
+            <div class="phone">
+              <i class="bi bi-phone"></i>
+              <h4>Appel:</h4>
+              <p>+21656279491</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-8 mt-5 mt-lg-0">
+
+          <form [formGroup]="contactForm"  method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" formControlName="name"   placeholder="Votre Nom" required>
+              </div>
+              <div *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].touched ||
+              contactForm.controls['name'].dirty)">
+              <div *ngIf="contactForm.controls['name'].errors.required" class="red">
+                Le nom est requis
+
+              </div>
+              <div *ngIf="contactForm.controls['name'].errors.minlength" class="red">
+                Le nom doit comporter au moins 3 caractères
+
+              </div>
+              <div *ngIf="contactForm.controls['name'].errors.maxlength" class="red">
+                Le nom doit contenir au maximum 20 caractères
+
+              </div>
+
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" formControlName="email"  placeholder="Votre Email" required>
+              </div>
+              <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].touched ||
+              contactForm.controls['email'].dirty)">
+              <div *ngIf="contactForm.controls['email'].errors.required" class="red">
+                L'e-mail est requis
+
+              </div>
+              <div *ngIf="contactForm.controls['email'].errors.email" class="red">
+                Le courriel est invalide
+
+              </div>
+
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" formControlName="subject" placeholder="Sujet" required>
+            </div>
+            <div *ngIf="contactForm.controls['subject'].invalid && (contactForm.controls['subject'].touched ||
+                    contactForm.controls['subject'].dirty)">
+                    <div *ngIf="contactForm.controls['subject'].errors.required" class="red">
+                      Le sujet est obligatoire
+
+                    </div>
+                    <div *ngIf="contactForm.controls['subject'].errors.minlength" class="red">
+                      Le sujet doit avoir au moins 3 caractères
+
+                    </div>
+                    <div *ngIf="contactForm.controls['subject'].errors.maxlength" class="red">
+                      Le sujet doit comporter au maximum 30 caractères
+
+                    </div>
+                    
+                    </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" formControlName="message" placeholder="Message" required></textarea>
+            </div>
+            <div *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].touched ||
+            contactForm.controls['message'].dirty)">
+            <div *ngIf="contactForm.controls['message'].errors.required" class="red">
+              Le message est requis
+                
+            </div>
+            <div *ngIf="contactForm.controls['message'].errors.minlength" class="red">
+              Le message doit contenir 3 caractères
+            </div>
+            <div *ngIf="contactForm.controls['message'].errors.maxlength" class="red">
+              Le message doit contenir au maximum 1000 caractères
+
+            </div>
+
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button (click)="contact()" type="submit">Envoyer le message</button></div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->

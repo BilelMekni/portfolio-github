@@ -1,0 +1,31 @@
+
+<h1>CONTACT TABLE</h1>
+<img src="assets/img/list.jpg" alt="" class="listimage">
+<table class="table table-info">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Sujet</th>
+        <th scope="col">Message</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cont of contact">
+        <th scope="row">{{cont._id}}</th>
+        <td>{{cont.name}}</td>
+        <td>{{cont.email}}</td>
+        <td>{{cont.subject}}</td>
+        <td>{{cont.message}}</td>
+        <td>
+          <button >
+            <img src="assets/img/dd.avif" alt="" srcset=""  (click)="deleteContact(cont._id)"   class="delete" title="Supprime Contact">
+          </button>
+        </td>
+
+      </tr>
+     
+    </tbody>
+  </table>

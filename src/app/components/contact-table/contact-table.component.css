@@ -1,0 +1,17 @@
+h1{
+    color: blue;
+    text-align: center;
+    font-size: xx-large;
+    text-decoration: underline;
+    background-color: rosybrown;
+}
+.delete{
+    height: 70px;
+    width: 70px;
+}
+.listimage{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    margin-left: 600px;
+}
